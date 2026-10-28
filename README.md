@@ -21,6 +21,8 @@ A soothing pastel userstyle for <a href="https://messages.google.com/web">Google
 
 ## Previews
 
+> userstyle doesn't change any profile pictures just changed them for privacy reasons
+
 <details>
 <summary>🌻 Latte (broken)</summary>
 <img src="https://github.com/chromecrash/catppuccin-google-messages-web/blob/main/assets/Latte.png?raw=true"/>
