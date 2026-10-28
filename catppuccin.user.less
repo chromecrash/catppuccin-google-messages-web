@@ -1,0 +1,277 @@
+/* ==UserStyle==
+@name Google Messages Catppuccin
+@namespace https://github.com/chromecrash/catppuccin-google-messages-web
+@homepageURL https://github.com/chromecrash/catppuccin-google-messages-web
+@version 1.0.0
+@updateURL https://example.com
+@description Soothing pastel theme for Google Messages
+@author chromecrash / pfew
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@import "https://userstyles.catppuccin.com/lib/std/v1.less";
+
+@-moz-document domain("messages.google.com") {
+  #catppuccin(@flavor) {
+    #lib.palette();
+    #lib.defaults();
+
+    /* Main conversation background */
+    body mw-conversation-container {
+      --conv-container-host-bg-color: @base;
+      --conversation-rbm-color: @subtext0;
+    }
+
+    /* Message area and composer background */
+    body mws-message-compose {
+      --input-bg-color: @surface1;
+    }
+
+    .input-background {
+      background: linear-gradient(
+        to bottom,
+        var(--input-bg-transparent-fade-color) 0,
+        @base 45%
+      );
+    }
+
+    /* Header */
+    body mws-header {
+      --header-bg-color: @base;
+      --header-color: @text;
+    }
+
+    /* RCS message bubbles */
+    body.material-next-msg mws-message-part-content {
+      --rcs-incoming-bg-color: @surface0;
+      --rcs-outgoing-bg-color: @surface0;
+    }
+
+    /* SMS message bubbles */
+    .text-msg-content {
+      background-color: @surface0;
+      color: @text;
+    }
+
+    /* Incoming RCS text */
+    .incoming.enable-text-color {
+      color: @text;
+    }
+
+    /* Outgoing RCS text */
+    .rcs-outgoing.enable-text-color {
+      color: @text;
+    }
+
+    /* Message timestamps */
+    .tombstone-timestamp {
+      color: @subtext1;
+    }
+
+    /* Message info */
+    .msg-info {
+      color: @subtext0;
+    }
+
+    /* Replied-to message */
+    .replied-to-message-outer-container {
+      background-color: @base;
+    }
+
+    .reply-header-container {
+      background-color: @surface1;
+    }
+
+    /* Link previews */
+    body mws-link-preview-decorator {
+      --link-preview-border-color: @surface1;
+      --link-preview-title-color: @text;
+      --link-preview-content-color: @subtext1;
+      --link-preview-background-color: @base;
+    }
+
+    /* Download attachment */
+    .download {
+      display: flex;
+      height: 64px;
+      justify-content: center;
+      padding-left: 14px;
+      background-color: @surface0;
+    }
+
+    /* Attachment border */
+    .enable-border {
+      border: 1px solid @surface1;
+    }
+
+    /* Reactions */
+    .msg-reactions-animation,
+    .msg-reactions-emoji {
+      background-color: @surface1;
+    }
+
+    /* Group chat display names */
+    .participant-display-name,
+    .participant-display-name-text {
+      color: @text;
+    }
+
+    /* Background for transparent images */
+    .img {
+      background: @base;
+    }
+
+    /* Top header */
+    .container {
+      background: @base;
+    }
+
+    /* Left navigation header */
+    .main-nav-header {
+      background: @surface0;
+    }
+
+    /* Contact list */
+    .list-item {
+      background: @surface0 ;
+    }
+
+    /* hovered contacts */
+.list-item:focus:not(.selected),
+body:not([input-type="TOUCH"]) .list-item:hover:not(.selected) {
+  border-bottom-left-radius: var(--nav-item-border-bl-radius);
+  border-bottom-right-radius: var(--nav-item-border-br-radius);
+  border-top-left-radius: var(--nav-item-border-tl-radius);
+  border-top-right-radius: var(--nav-item-border-tr-radius);
+  overflow: hidden;
+  background-color: @surface1 !important;
+    
+    
+}
+      
+/* contact selected */
+.list-item.selected:focus, .selected {
+	background-color: @surface1 !important;
+}
+      
+/* scroll bar */
+* {
+  scrollbar-color: @surface1 @base;
+}
+      
+/* reactions */
+      body mw-message-reactions-selector {
+	--selector-container-bg-color: @surface1;
+	--picker-button-fill-color: @accent;
+          
+/* emoji from reactions */
+    .emoji-picker-wrapper, .mws-emoji-picker-v2 {
+	background: @surface1;
+}
+}
+
+/* sticker selection */
+      .display {
+	background: @surface1;
+}
+      mws-picker-wrapper .container {
+  background: @surface1 !important;
+}
+      
+/* sticker pack background */
+      .pack-cover {
+	background-color: @surface1;
+}
+
+/* emoji picker */
+      body mws-picker-wrapper {
+	--box-bg-color: @surface1;
+}
+      
+/* adding attachments */
+      .mat-mdc-menu-content, .mat-mdc-menu-content .mat-mdc-menu-item .mat-mdc-menu-item-text {
+	background: @surface1;
+}
+      
+/* start chat contacts */
+      .contacts-container {
+	background: @base;
+}
+      
+      .scrollable-content {
+	background: @base;
+}
+      
+      body mw-new-conversation-sub-header {
+	--new-conv-sub-header-bg-color: @base;
+	--new-conv-sub-header-border-color: @accent;
+}
+      
+    mw-contact-chips-input .input {
+  background-color: @base !important;
+}
+      
+/* start group text */
+      .start-group-container {
+	color: @text;
+}
+      
+/* top contacts text */
+      .top-contacts-group-label {
+	color: @text;
+      }          
+/* contact name text */
+.info-name {
+    color: @text;
+}
+
+/* phone number */
+      .info-number {
+	color: @subtext0
+}
+      
+/* alphabet label */
+      .group-label {
+	color: @text;
+}
+/* left side contacts text */
+      
+/* names */
+      .name {
+	color: @text;
+}
+/* last message */
+      .snippet-text {
+	color: @subtext0;
+}
+      
+/* time of last message for both sidebar and in chat */
+mws-relative-timestamp {
+  color: @subtext0 !important;
+}
+      
+/* tooltips */
+      .mat-mdc-tooltip-surface{
+          color: @text;
+        background: @overlay0;
+      }
+      
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      #catppuccin(@lightFlavor);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      #catppuccin(@darkFlavor);
+    }
+  }
+}
